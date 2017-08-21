@@ -1,6 +1,6 @@
 {
   "name": "@thx/testci",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Testing CI",
   "main": "index.js",
   "scripts": {

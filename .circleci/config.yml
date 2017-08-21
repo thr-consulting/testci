@@ -40,9 +40,11 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - deploy
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: /^v\d\.\d\.\d/
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d\.\d\.\d/

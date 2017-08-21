@@ -1,0 +1,22 @@
+{
+  "name": "@thx/testci",
+  "version": "1.0.0",
+  "description": "Testing CI",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thr-consulting/testci.git"
+  },
+  "author": "Mike Kornelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thr-consulting/testci/issues"
+  },
+  "homepage": "https://github.com/thr-consulting/testci#readme",
+  "dependencies": {
+    "jest": "^20.0.4"
+  }
+}

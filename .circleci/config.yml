@@ -40,7 +40,7 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - deploy:
+      - publish:
           requires:
             - build
           filters:

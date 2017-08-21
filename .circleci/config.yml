@@ -33,19 +33,16 @@ jobs:
       - checkout
       - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
       - run: yarn install
-      - run: yarn test
       - run: npm publish --access public
 
 workflows:
   version: 2
-  build:
+  build-and-deploy:
     jobs:
       - build
-  publish:
-    jobs:
       - deploy
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v\d\.\d\.\d/
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^v\d\.\d\.\d/

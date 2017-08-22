@@ -48,6 +48,8 @@ workflows:
       - build:
           tags:
             ignore: /.*/
+          branches:
+            only: /.*/
   build-and-publish:
     jobs:
       - build:

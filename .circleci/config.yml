@@ -25,6 +25,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn test
+      - run: yarn lint
+      - run: yarn flow
   publish:
     docker:
       - image: circleci/node:6
@@ -40,11 +42,14 @@ workflows:
   build-and-deploy:
     jobs:
       - build
+          filters:
+            tags:
+              only: /.*/
       - publish:
           requires:
             - build
           filters:
-            branches:
-              only: master
             tags:
-              only: /^v\d\.\d\.\d/
+              only: /^v.*/
+            branches:
+              ignore: /.*/
